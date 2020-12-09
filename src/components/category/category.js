@@ -1,13 +1,17 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 
 import './category.scss';
 
-const Category = ({title, url, size}) => {
+const Category = ({title, imageUrl, size, history, linkUrl, match}) => {
 	return (
-		<div className={`${size} category`}>
+		<div 
+			onClick={() => history.push(`${match.url}${linkUrl}`)}
+			className={`${size} category`}
+		>
 			<div 
 				className="background-image"
-				style={{backgroundImage: `url(${url})`}}
+				style={{backgroundImage: `url(${imageUrl})`}}
 			/>
 				<div className='category-text'>
 					<h1 className='category-title'>{title.toUpperCase()}</h1>
@@ -18,4 +22,4 @@ const Category = ({title, url, size}) => {
 	
 }
 
-export default Category;
+export default withRouter(Category);

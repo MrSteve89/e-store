@@ -49,8 +49,8 @@ class MainContainer extends Component {
         return (
             <div className='main-container'>
                 {
-                    this.state.categories.map(({title, imageUrl, id, size}) => (
-                        <Category key={id} title={title} url={imageUrl} size={size}/>
+                    this.state.categories.map(({id, ...otherProps}) => (
+                        <Category key={id} {...otherProps} />
                     ))
                 }
             </div>
