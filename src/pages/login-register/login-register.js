@@ -1,13 +1,14 @@
 import React from 'react';
 import Login from '../../components/login/login';
+import Register from '../../components/register/register';
 
 import './login-register.scss';
 
 const LoginRegister = () => {
     return (
         <div className='login-register'>
-            Login and Register
             <Login />
+            <Register />
         </div>
     );
 }

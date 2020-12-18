@@ -19,7 +19,7 @@ class Login extends Component {
 
     handleChange = (event) => {
         const {name, value} = event.target;
-        this.setState({[name]: value })
+        this.setState({[name]: value });
     }
 
     handleSubmit = (event) => {
@@ -28,26 +28,27 @@ class Login extends Component {
     }
 
     render() {
+        const {email, password} = this.state;
         return(
             <div className='login'>
                 <h2 className='title'>I already have an account</h2>
-                <span>Sign in with your email and password.</span>
+                <span>Sign In with your email and password.</span>
 
                 <form onSubmit={this.handleSubmit}>
                     <FormInput 
                         name='email' 
                         type='email' 
-                        value={this.state.email}
+                        value={email}
                         handleChange={this.handleChange} 
-                        label='email'
+                        label='Email'
                         required 
                     />
                     <FormInput 
                         name='password' 
                         type='password' 
-                        value={this.state.password} 
+                        value={password} 
                         handleChange={this.handleChange}
-                        label='password' 
+                        label='Password' 
                         required 
                     />
                     <div className='buttons'>
