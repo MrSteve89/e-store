@@ -33,8 +33,6 @@ class Login extends Component {
         } catch(error) {
             console.error(error);
         }
-
-        
     }
 
     render() {
@@ -63,7 +61,7 @@ class Login extends Component {
                     />
                     <div className='buttons'>
                         <CustomButton type='submit'>Login</CustomButton>
-                        <CustomButton onClick={signInWithGoogle} isGoogleLogin>Login with Google</CustomButton>
+                        <CustomButton type='button' onClick={signInWithGoogle} isGoogleLogin>Login with Google</CustomButton>
                     </div>
                 </form>
             </div>
